@@ -1,0 +1,54 @@
+*{margin: 0; padding: 0;}
+
+body{font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; background-color: lightgray;}
+
+/* INICIO TELA DE ENTRDA*/
+#acesso{ height: 100vh; background-color: #006699; text-align: center; position: absolute;}
+
+.logoEntrada{ width: 100vw; height: 50vh;}
+
+.logoEntrada img { height: 40vh; margin-top: 4vw;}
+
+#logainAcesso{ width: 100vw; height: 50vh; position: relative;}
+
+#logar{margin: auto; width: 35vw; height: 35vh; border: .3em solid #222; box-sizing: border-box; background-color: white; border-radius: 30px;}
+
+#loginAcesso h3{ color: beige; font-size: 1.2vw; padding-top: 1.8vh;}
+
+#formLogin{position: relative;}
+
+
+#btnAcessar{border: 1px solid #222; border-radius: 2.5vh; background-color: #006699; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 2.5vh; color: white; width: 12vw;
+    height: 7vh; margin-top: 2vh;}
+
+#formLogin table td{margin: auto; width: 100%; box-sizing: border-box; height: 6vh;}
+
+#login, #senha{
+    width: 20vw;
+    height: 5vh;
+    font-size: 2.5vh;    
+    border-radius: .7em;
+    border: .1em solid #222;
+    padding-left: 1em;
+    box-sizing: border-box;
+}
+
+#login:focus, #senha:focus{
+    border: .1em solid yellow;
+}
+
+input {outline: none}
+
+#retorno{
+    width: 100%;
+    height: 4vh;
+    align-items: center;
+    font-size: 2.5vh;
+    color: red;
+    font-weight: bolder;
+    margin-top: 1.5vh;
+}
+
+/*FIM TELA DE ENTRDA*/
+

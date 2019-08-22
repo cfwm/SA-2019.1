@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>YB - Estoque</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+    <script type="text/javaScript" src="../js/telaCadastroEstoque.js"></script>
+    <script type="text/javaScript" src="../js/validaCamposFormularios.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+    <script type="text/javaScript" src="../js/jquery.mask.min.js"></script>
+    <script type="text/javaScript">
+        $(document).ready(function(){
+            $("#validadeProduto").mask("00/00/0000");
+            $("#precoCompraProduto").mask("999.999.999,99", {reverse: true})
+            $("#precoVendaProduto").mask("999.999.999,99", {reverse: true})
+            $("#valorTotalVendaEstoque").mask("999.999.999,99", {reverse: true})
+            $("#valorTotalCustoEstoque").mask("999.999.999,99", {reverse: true})
+        })
+    </script>
+</head>
+<body onload="consultaArray()">
+    <header id="header">
+        <div class="headbotoes"></div>
+        <div class="headbotoes"></div>
+        <div class="headlogo"><img src="../img/logoSistema.png" id="logosistema" alt="logoSistema"> </div>
+        <div class="headbotoes"><img id="btn_ajuda" src="../img/btn_gerais/head_ajuda.png" alt="iconeAjuda" title="Ajuda"></div>
+        <div class="headbotoes"><a href="../index.html"><img id="btn_sair" src="../img/btn_gerais/head_sair.png" alt="iconeSair" title="Sair"></a></div>
+    </header>
+    <div id="principal">
+        <nav id="menuEsquerda">
+            <div class="btn_menu">
+                <a href="home.html">
+                <img id="btn_img" src="../img/btn_gerais/menu_principal.png" alt="pg_principal" title="Página Principal"></a>
+                <span><h3>Home</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="lojas.html">
+                <img id="btn_img" src="../img/btn_gerais/menu_loja.png" alt="pg_cadLojas" title="Cadastro Lojas"></a>
+                <span><h3>Lojas</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="vendedores.html">
+                <img id="btn_img" src="../img/btn_gerais/menu_vendedores.png" alt="pg_cadVendedores" title="Cadastro Vendedores"></a>
+                <span><h3>Vendedores</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="clientes.html">                
+                <img id="btn_img" src="../img/btn_gerais/menu_cliente.png" alt="pg_cadClientes" title="Cadastro Clientes"></a>
+                <span><h3>Clientes</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="estoque.html">                
+                <img id="btn_img" src="../img/btn_gerais/menu_estoque.png" alt="pg_cadEstoque" title="Cadastro Produtos"></a>
+                <span><h3>Produtos</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="vendas.html">
+                <img id="btn_img" src="../img/btn_gerais/menu_vendas.png" alt="pg_cadVendas" title="Cadastro Vendas"></a>
+                <span><h3>Vendas</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="relatorios.html">
+                <img id="btn_img" src="../img/btn_gerais/menu_relatorio.png" alt="pg_relatorios" title="Relatorios"></a>
+                <span><h3>Relatórios</h3></span>
+            </div>    
+        </nav>
+        <div id="conteudoPrincipal">
+                <div id="abas">
+                    <nav class="nav_tabs">
+                        <ul>
+                            <li>
+                                <input type="radio" name="tabs" class="rd_tabs" id="cadLoja" checked disabled>
+                                <label class="label_abas" for="cadLoja">Produtos</label>
+                                <div class="conteudo">
+                                    <article>
+                                        <h3 style="text-align: center; padding: .5em;" id="tituloPagina">RELAÇÃO PRODUTOS</h3>
+                                        <div id="tabela">
+                                            <table id="tabCadastro" style="width: 100%; margin-top: 1.5em;">
+                                                <thead>
+                                                    <th style="width: 10%">CÓDIGO</th>
+                                                    <th style="width: 20%">CÓDIGO BARRAS</th>
+                                                    <th style="width: 20%">DESCRICAO</th>
+                                                    <th style="width: 15%">QTD DISPONÍVEL</th>
+                                                    <th style="width: 15%">VALOR UNITÁRIO</th>
+                                                    <th style="width: 1%"></th>
+                                                    <th style="width: 1%"></th>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                    </article>
+                                </div>
+                            </li>
+                            <li>
+                                <input type="radio" name="tabs" class="rd_tabs" id="editLoja">
+                                <label class="label_abas" for="editLoja" id="modoEdicao">+ Produtos</label>
+                                <div class="conteudo">
+                                    <div id="cadastroLoja">
+                                        <form id="frmLojas">
+                                            <fieldset id=frmSecoes>
+                                                <legend><p>Dados Produtos</p></legend>
+                                                    <article id="box3">
+                                                            <label for="" >Código:</label>
+                                                            <input type="text" class="cxText" id="codProduto" disabled style="width: 32%;">
+                                                            <input type="button" id="btnIdCodigos" value="Código" onclick="gerarCodigoProduto()"> 
+                                                    </article>
+                                                    <article id="box2">
+                                                            <label for="" style="width: 25%;">Código Barras:</label>
+                                                            <input type="text" class="cxText" id="codProdutoBarras" disabled style="width: 32%;">
+                                                            <input type="button" id="btnIdCodigosBarras" value="Barras" onclick="gerarCodigoBarras()">
+                                                    </article>
+                                                    <article id="box3">
+                                                            <label for="">Nome:</label>
+                                                            <input type="text"  class="cxText" id="nomeProduto" style="width: 50%;" onblur="fnValidaNomeProduto()">
+                                                    </article>
+                                                    <article id="box2">
+                                                            <label for="">Origem:</label>
+                                                            <input type="text"  class="cxText" id="origemProduto"style="width: 50%;">
+                                                    </article>
+                                                    <article id="box3">
+                                                            <label for="">Unidade:</label>
+                                                            <input type="text"  class="cxText" id="unidadeProduto"style="width: 35%;text-align: center;">
+                                                    </article>
+                                                    <article id="box3">
+                                                            <label for="">Validade:</label>
+                                                            <input type="text"  class="cxText" id="validadeProduto"style="width: 35%;text-align: center;">
+                                                    </article>
+                                            </fieldset>
+                                            <fieldset id=frmSecoes>
+                                                    <legend><p>Estoque</p></legend>
+                                                    <article id="box5">
+                                                            <label for="" style="width: 40%" >Quantidade:</label>
+                                                            <input type="text"  class="cxText" id="qtdProduto" style="width: 30%;text-align: center; padding: 1em;" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                                    </article>
+                                                    <article id="box5">
+                                                            <label for="" style="width: 40%;">Preço Compra R$:</label>
+                                                            <input type="text"  class="cxText" id="precoCompraProduto" style="width: 30%; text-align: right; padding: 1em;" onBlur="fnCalculaEstoque(this.id)">
+                                                    </article>
+                                                    <article id="box5">
+                                                            <label for="" style="width: 40%">Valor Estoque R$:</label>
+                                                            <input type="text"  class="cxText" id="valorTotalCustoEstoque" style="width: 30%; text-align: right; padding: 1em;" disabled>
+                                                    </article>
+                                                </fieldset>
+                                                <fieldset id=frmSecoes>
+                                                    <legend><p>Vendas</p></legend>
+                                                        <article id="box2">
+                                                                <label for="" style="width: 30%">Preço Venda R$:</label>
+                                                                <input type="text"  class="cxText" id="precoVendaProduto" style="width: 20%; text-align: right; padding: 1em;" onBlur="fnCalculaEstoque(this.id)">
+                                                        </article>
+                                                        <article id="box2">
+                                                                <label for="" style="width: 35%">Valor Total Estoques R$:</label>
+                                                                <input type="text"  class="cxText" id="valorTotalVendaEstoque" style="width: 20%; text-align: right; padding: 1em;" disabled>
+                                                        </article>
+                                                </fieldset>
+                                                <fieldset id=frmSecoes>
+                                                    <input type="button" id="btnAdicionar" value="Salvar" class="botao" onclick="fnSalvarProduto()">  
+                                            
+                                                    <input type="button" id="btnEditar" value="Salvar" class="botao" onclick="fnEditarCadProduto()">
+                                                    
+                                                    <input type="button" id="btnCancelar" value="Cancelar" class="botao" onclick="fnCancelar()">
+                                                </fieldset>
+                                            </form>
+                                        </div>
+                                    </div>
+                            
+                                </div>
+                            </li>               
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    <div id="clear"></div>
+    <footer id="footer"><p>DESENVOLVIDO POR EQUIPE YIELD E SENAI FLORIANÓPOLIS - SC - 2019/01</p></footer>
+</body>
+</html> 

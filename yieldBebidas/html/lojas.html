@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>YB - Lojas</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+    <script type="text/javaScript" src="../js/telaCadastroLojas.js"></script>
+    <script type="text/javaScript" src="../js/consultaCep.js"></script>
+    <script type="text/javaScript" src="../js/validaCamposFormularios.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+    <script type="text/javaScript" src="../js/jquery.mask.min.js"></script>
+    <script type="text/javaScript">
+        $(document).ready(function(){
+            $("#cnpjLoja").mask("00.000.000/0000-00");
+            $("#ddd").mask("(00)");
+            $("#telefone").mask("0000-0000");
+            $("#cep").mask("00000-000");
+        })
+    </script>
+
+</head>
+<body onload="consultaArray1()">
+    <header id="header">
+        <div class="headbotoes"></div>
+        <div class="headbotoes"></div>
+        <div class="headlogo"><img src="../img/logoSistema.png" id="logosistema" alt="logoSistema"> </div>
+        <div class="headbotoes"><img id="btn_ajuda" src="../img/btn_gerais/head_ajuda.png" alt="iconeAjuda" title="Ajuda"></div>
+        <div class="headbotoes"><a href="../index.html"><img id="btn_sair" src="../img/btn_gerais/head_sair.png" alt="iconeSair" title="Sair"></a></div>
+    </header>
+    <div id="principal">
+        <nav id="menuEsquerda">
+            <div class="btn_menu">
+                <a href="home.html">
+                <img id="btn_img" src="../img/btn_gerais/menu_principal.png" alt="pg_principal" title="Página Principal"></a>
+                <span><h3>Home</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="lojas.html">
+                <img id="btn_img" src="../img/btn_gerais/menu_loja.png" alt="pg_cadLojas" title="Cadastro Lojas"></a>
+                <span><h3>Lojas</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="vendedores.html">
+                <img id="btn_img" src="../img/btn_gerais/menu_vendedores.png" alt="pg_cadVendedores" title="Cadastro Vendedores"></a>
+                <span><h3>Vendedores</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="clientes.html">                
+                <img id="btn_img" src="../img/btn_gerais/menu_cliente.png" alt="pg_cadClientes" title="Cadastro Clientes"></a>
+                <span><h3>Clientes</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="estoque.html">                
+                <img id="btn_img" src="../img/btn_gerais/menu_estoque.png" alt="pg_cadEstoque" title="Cadastro Produtos"></a>
+                <span><h3>Produtos</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="vendas.html">
+                <img id="btn_img" src="../img/btn_gerais/menu_vendas.png" alt="pg_cadVendas" title="Cadastro Vendas"></a>
+                <span><h3>Vendas</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="relatorios.html">
+                <img id="btn_img" src="../img/btn_gerais/menu_relatorio.png" alt="pg_relatorios" title="Relatorios"></a>
+                <span><h3>Relatórios</h3></span>
+            </div>    
+        </nav>
+        <div id="conteudoPrincipal">
+            <div id="abas">
+                <nav class="nav_tabs">
+                    <ul>
+                        <li>
+                            <input type="radio" name="tabs" class="rd_tabs" id="cadLoja" checked disabled>
+                            <label class="label_abas" for="cadLoja">LOJAS</label>
+                            <div class="conteudo">
+                                <article>
+                                    <h3 style="text-align: center; padding: .5em;" id="tituloPagina">RELAÇÃO LOJAS</h3>    
+                                        <div id="tabela">
+                                            <table id="tabCadastro" border=0 style="width: 100%; margin-top: 1.5em;">
+                                            <thead>
+                                                <th style="width: 5%">CÓDIGO</th>
+                                                <th style="width: 30%">RAZAO SOCIAL</th>
+                                                <th style="width: 20%">CNPJ</th>
+                                                <th style="width: 20%">CIDADE</th>
+                                                <th style="width: 5%">UF</th>
+                                                <th style="width: 20%">E-MAIL</th>
+                                                <th style="width: 10%"></th>
+                                                <th style="width: 10%"></th>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </article>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="radio" name="tabs" class="rd_tabs" id="editLoja">
+                            <label class="label_abas" for="editLoja" id="modoEdicao">+ LOJAS</label>
+                            <div class="conteudo">
+                                <div id="cadastroLoja">
+                                    <form id="frmLojas" name="frmLojas">
+                                        <fieldset id=frmSecoes>
+                                            <legend><p>Dados Loja</p></legend>
+                                                <article id="box1">
+                                                        <label for="" >Código:</label>
+                                                        <input type="text" class="cxText" id="codLoja" disabled style="width: 7%;">
+                                                        <input type="button" 
+                                                        id="btnIdCodigos" value="Código"
+                                                        onclick="gerarCodigoLoja()">
+                                                        
+                                                </article>
+                                                <article id="box2">
+                                                        <label for="">Nome:</label>
+                                                        <input type="text"  class="cxText" id="nomeLoja" name="nomeLoja" style="width: 75%;" onblur="fnValidaNomeLoja()" required>
+                                                </article>
+                                                <article id="box2">
+                                                        <label for="">CNPJ:</label>
+                                                        <input type="text"  class="cxText" id="cnpjLoja" name="cnpjLoja" style="width: 75%;" onblur="fnValidaCnpjLoja()" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="14">
+                                                </article>
+                                        </fieldset>
+                                        <fieldset id=frmSecoes>
+                                                <legend><p>Endereço</p></legend>
+                                                <article id="box1">
+                                                        <label for="">CEP:</label>
+                                                        <input type="text"  class="cxText" id="cep" style="width: 10%;" name="cep" size="10" maxlength="9" onblur="pesquisacep(this.value);" />
+                                                </article>
+                                                <article id="box3">
+                                                        <label for="" >Rua:</label>
+                                                        <input type="text" class="cxText" id="rua" style="width: 75%;" disabled>
+                                                </article>
+                                                <article id="box4">
+                                                        <label for="">Número:</label>
+                                                        <input type="text"  class="cxText" id="num" style="width: 50%; text-align: center;">
+                                                </article>
+                                                <article id="box3">
+                                                        <label for="">Compl.:</label>
+                                                        <input type="text"  class="cxText" id="complemento" style="width: 75%;">
+                                                </article>
+                                                <article id="box3">
+                                                        <label for="">Bairro:</label>
+                                                        <input type="text"  class="cxText" id="bairro" style="width: 75%; " disabled>
+                                                </article>
+                                                <article id="box3">
+                                                        <label for="">Cidade:</label>
+                                                        <input type="text"  class="cxText" id="cidade" style="width: 75%;" disabled>
+                                                </article>
+                                                <article id="box4">
+                                                        <label for="">Estado:</label>
+                                                        <input type="text"  class="cxText" id="uf" style="width: 50%; text-align: center;" disabled>
+                                                </article>
+                                        </fieldset>
+                                        <fieldset id=frmSecoes>
+                                                <legend><p>Contato</p></legend>
+                                                    <article id="box2">
+                                                            <label for="">Nome:</label>
+                                                            <input type="text"  class="cxText" id="contato" style="width: 75%;">
+                                                    </article>
+                                                    <article id="box2">
+                                                            <label for="">Telefone:</label>
+                                                            <input type="text"  class="cxText" id="ddd" placeholder="DDD" style="width: 15%; text-align: center;">
+                                                            <input type="text"  class="cxText" id="telefone" placeholder="Número" style="width: 30%; text-align: center">
+                                                    </article>
+                                                    <article id="box2">
+                                                        <label for="">E-mail:</label>
+                                                        <input type="text"  class="cxText" id="email" name="email" style="width: 75%;">
+                                                </article>
+                                                <article id="box2">
+                                                        <label for="">Site:</label>
+                                                        <input type="text"  class="cxText" id="site"style="width: 75%;">
+                                                </article>
+                                            </fieldset>
+                                            <fieldset id=frmSecoes>
+                                                <input type="submit" id="btnAdicionar" value="Salvar" class="botao" onclick="fnSalvarLoja()">  
+                                                
+                                                <input type="button" id="btnEditar" value="Salvar" class="botao" onclick="fnEditarCadLoja()">
+                                                
+                                                <input type="button" id="btnCancelar" value="Cancelar" class="botao" onclick="fnCancelar()">
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                </div>
+                        
+                            </div>
+                        </li>               
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div id="clear"></div>
+    <footer id="footer"><p>DESENVOLVIDO POR EQUIPE YIELD E SENAI FLORIANÓPOLIS - SC - 2019/01</p></footer>
+</body>
+</html>

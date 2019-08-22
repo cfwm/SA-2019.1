@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>YB - Relatórios</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+    <script type="text/javaScript" src="../js/adminExclusao.js"></script>
+    <script type="text/javaScript" src="../js/adminExportacao.js"></script>
+    <script type="text/javaScript" src="../js/adminInclusao.js"></script>
+</head>
+<body>
+    <header id="header">
+        <div class="headbotoes"></div>
+        <div class="headbotoes"></div>
+        <div class="headlogo"><img src="../img/logoSistema.png" id="logosistema" alt="logoSistema"> </div>
+        <div class="headbotoes"><img id="btn_ajuda" src="../img/btn_gerais/head_ajuda.png" alt="iconeAjuda" title="Ajuda"></div>
+        <div class="headbotoes"><a href="../index.html"><img id="btn_sair" src="../img/btn_gerais/head_sair.png" alt="iconeSair" title="Sair"></a></div>
+    </header>
+    <div id="principal">
+        <nav id="menuEsquerda">
+            <div class="btn_menu">
+                <a href="home.html">
+                <img id="btn_img" src="../img/btn_gerais/menu_principal.png" alt="pg_principal" title="Página Principal"></a>
+                <span><h3>Home</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="lojas.html">
+                <img id="btn_img" src="../img/btn_gerais/menu_loja.png" alt="pg_cadLojas" title="Cadastro Lojas"></a>
+                <span><h3>Lojas</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="vendedores.html">
+                <img id="btn_img" src="../img/btn_gerais/menu_vendedores.png" alt="pg_cadVendedores" title="Cadastro Vendedores"></a>
+                <span><h3>Vendedores</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="clientes.html">                
+                <img id="btn_img" src="../img/btn_gerais/menu_cliente.png" alt="pg_cadClientes" title="Cadastro Clientes"></a>
+                <span><h3>Clientes</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="estoque.html">                
+                <img id="btn_img" src="../img/btn_gerais/menu_estoque.png" alt="pg_cadEstoque" title="Cadastro Produtos"></a>
+                <span><h3>Produtos</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="vendas.html">
+                <img id="btn_img" src="../img/btn_gerais/menu_vendas.png" alt="pg_cadVendas" title="Cadastro Vendas"></a>
+                <span><h3>Vendas</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="relatorios.html">
+                <img id="btn_img" src="../img/btn_gerais/menu_relatorio.png" alt="pg_relatorios" title="Relatorios"></a>
+                <span><h3>Relatórios</h3></span>
+            </div>    
+        </nav>
+
+        <div id="conteudoPrincipal">
+            <h5 style="text-align: left">EXPORTA STORAGE</h5>
+            <table style="text-align: left">
+                <tr>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;" value="Storage Produtos" onclick="fnExportaStorageProdutos()"></td>
+                    <td style="width: 25px;"></td>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Códigos Produtos" onclick="fnExportaStorageCodigoProdutos()"></td>
+                    <td style="width: 25px;"></td>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Cód. Barras Produtos" onclick="fnExportaStorageCodBarrasProdutos()"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Lojas" onclick="fnExportaStorageLojas()"></td>
+                    <td style="width: 25px;"></td>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Códigos Lojas" onclick="fnExportaStorageCodigoLojas()"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Vendedores" onclick="fnExportaStorageVendedores()"></td>
+                    <td style="width: 25px;"></td>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Códigos Vendedores" onclick="fnExportaStorageCodigoVendedores()"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Clientes" onclick="fnExportaStorageClientes()"></td>
+                    <td style="width: 25px;"></td>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Códigos Clientes" onclick="fnExportaStorageCodigoClientes()"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Vendas" onclick="fnExportaStorageVendas()"></td>
+                    <td style="width: 25px;"></td>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Códigos Vendas" onclick="fnExportaStorageCodigoVendas()"></td>
+                </tr>
+            </table></br>
+            <h5 style="text-align: left">INCLUI STORAGE</h5>
+            <table style="text-align: left">
+                <tr>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Produtos" onclick="fnIncluiStorageProdutos()"></td>
+                    <td style="width: 25px;"></td>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Códigos Produtos" onclick="fnIncluiStorageCodigoProdutos()"></td>
+                    <td style="width: 25px;"></td>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Cód. Barras Produtos" onclick="fnIncluiStorageCodBarrasProdutos()"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Lojas" onclick="fnExportaStorageLojas()"></td>
+                    <td style="width: 25px;"></td>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Códigos Lojas" onclick="fnExportaStorageCodigoLojas()"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Vendedores" onclick="fnExportaStorageVendedores()"></td>
+                    <td style="width: 25px;"></td>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Códigos Vendedores" onclick="fnExportaStorageCodigoVendedores()"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Clientes" onclick="fnExportaStorageClientes()"></td>
+                    <td style="width: 25px;"></td>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Códigos Clientes" onclick="fnExportaStorageCodigoClientes()"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Vendas" onclick="fnExportaStorageVendas()"></td>
+                    <td style="width: 25px;"></td>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Códigos Vendas" onclick="fnExportaStorageCodigoVendas()"></td>
+                </tr>
+            </table></br>
+            <h5 style="text-align: left">EXCLUI STORAGE</h5>
+            <table style="text-align: left">
+                <tr>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Produtos" onclick="fnExcluiStorageProdutos()"></td>
+                    <td style="width: 25px;"></td>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Códigos Produtos" onclick="fnExcluiStorageCodigoProdutos()"></td>
+                    <td style="width: 25px;"></td>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Cód. Barras Produtos" onclick="fnExcluiStorageCodBarrasProdutos()"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Lojas" onclick="fnExportaStorageLojas()"></td>
+                    <td style="width: 25px;"></td>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Códigos Lojas" onclick="fnExportaStorageCodigoLojas()"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Vendedores" onclick="fnExportaStorageVendedores()"></td>
+                    <td style="width: 25px;"></td>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Códigos Vendedores" onclick="fnExportaStorageCodigoVendedores()"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Clientes" onclick="fnExportaStorageClientes()"></td>
+                    <td style="width: 25px;"></td>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Códigos Clientes" onclick="fnExportaStorageCodigoClientes()"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Vendas" onclick="fnExportaStorageVendas()"></td>
+                    <td style="width: 25px;"></td>
+                    <td><input type="button" style="font-size: .65em; width: 250px; height: 20px; text-align: left;"  value="Storage Códigos Vendas" onclick="fnExportaStorageCodigoVendas()"></td>
+                </tr>
+            </table></br>
+            <h5 style="text-align: left">RESULTADO FUNÇÕES</h5>
+            <div id="retornoFuncoes" style="overflow-y: scroll; width: 100%; height: 65px; border: 1px solid black; text-align: left;"></div>
+        </div>  
+        
+    </div>
+    <footer id="footer"><p>DESENVOLVIDO POR EQUIPE YIELD E SENAI FLORIANÓPOLIS - SC - 2019/01</p></footer>
+</body>
+</html>

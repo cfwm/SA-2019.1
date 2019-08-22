@@ -1,0 +1,113 @@
+*{
+    margin: 0; 
+    padding: 0
+}
+
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: lightgray;
+}
+
+#header{
+    background-color: #006699; 
+    height: 5em;
+    text-align: center;
+}
+
+.headbotoes{
+    width: 5%;
+    height: 100%;
+    float: left;
+    box-sizing: border-box;
+}
+
+.headlogo{
+    width: 80%;
+    height: 100%;
+    float: left;
+    box-sizing: border-box;
+}
+
+#logosistema{
+    height: 100%;
+}
+
+#btn_ajuda, #btn_sair{
+    margin-top: 1em;
+    height: 50%;
+}
+
+#menuEsquerda{
+    background-color: #222; 
+    color: white;
+    width: 75px; 
+    height: 87vh; 
+    float: left;
+}
+
+.btn_menu{
+    margin-top: 10%;
+    width: 60px;
+    height: 60px;
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.btn_menu span{
+    margin-left: -260px;
+    text-align: center;
+    width: 200px;
+    height: 60px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #222;
+    float: left;
+    position: absolute;
+}
+
+.btn_menu span a{
+    text-decoration: none;
+}
+
+.btn_menu:hover span{
+    background-color: #222;
+    margin-left: 50px;
+    border-radius: 20px;
+}
+
+#btn_img{
+    height: 100%;
+}
+
+
+#conteudoPrincipal{
+    margin: auto; 
+    background-color: lightgray; 
+    float: right; 
+    margin-right: 3vw;  
+    width: 90vw; 
+    height: 85vh;
+    text-align: center;
+}
+
+#clear{
+    clear:both
+}
+
+#footer{
+    background-color: #006699; 
+    position: absolute; 
+    bottom: 0; 
+    width: 100%;
+    height: 5vh;
+    text-align: center;
+    padding: 1.5vh;
+    box-sizing: border-box;
+}
+
+#footer p{
+    color: white;
+    font-size: 2.2vh;
+    font-weight: unset;
+}

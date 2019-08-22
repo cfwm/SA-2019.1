@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Yield Bebidas</title>
+    <link rel="stylesheet" href="css/estiloIndex.css">
+    <!--<script src="js/eventosMouse.js"></script>-->
+    <script language="javascript" type="text/JavaScript" src="js/login.js"></script>
+    <script language="javascript" type="text/JavaScript" src="js/eventosMouse.js"></script>
+</head>
+<body>
+    <div id="acesso">
+        <div class="logoEntrada">
+            <img src="img/logo.png">
+        </div>
+
+        <div id="loginAcesso">
+            <div id="logar">
+                <div id="retorno"></div>
+                <form id="formLogin">
+                    <table id="frmTable">
+                        <tr>
+                            <td><input type="text" id="login" onmouseover="imputLoginSenha()" placeholder="login" ></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="password" id="senha" placeholder="senha" onfocus="imputLoginSenha()">
+                            <td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="button" value="ACESSAR" id="btnAcessar" onmouseover="btnAcessarOver()" onmouseout="btnAcessarOut()" onclick="btn_acessaLogin()">
+                            </td>    
+                        </tr>
+                     </table>
+                     <div><a href="#" onclick="btn_cadastraLogin()">Esqueci minha senha</a></div>
+                     <div id="respostas"></div>
+                </form>
+            </div>
+            <h3>Senais - Florianópolis - SA / 201901</h3>
+            </div>
+        </div>
+</body>
+</html>

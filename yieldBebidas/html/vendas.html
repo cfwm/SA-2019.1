@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>YB - Vendas</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+    <script text="text/javaScript" src="../js/telaVendasCarregaDados.js"></script>
+    <script text="text/javaScript" src="../js/telaVendasGravaInformacoes.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+    <script type="text/javaScript" src="../js/jquery.mask.min.js"></script>
+    <script type="text/javaScript">
+        $(document).ready(function(){
+            $("#produtoQuantidade").mask("999.999.999", {reverse: true});
+            // $("#somaTotal").mask("999.999.999,99");
+        })
+    </script>
+
+</head>
+<body onload="fnCarregaDadosLocalStorage()">
+    <header id="header">
+        <div class="headbotoes"></div>
+        <div class="headbotoes"></div>
+        <div class="headlogo"><img src="../img/logoSistema.png" id="logosistema" alt="logoSistema"> </div>
+        <div class="headbotoes"><img id="btn_ajuda" src="../img/btn_gerais/head_ajuda.png" alt="iconeAjuda" title="Ajuda"></div>
+        <div class="headbotoes"><a href="../index.html"><img id="btn_sair" src="../img/btn_gerais/head_sair.png" alt="iconeSair" title="Sair"></a></div>
+    </header>
+    <div id="principal">
+        <nav id="menuEsquerda">
+            <div class="btn_menu">
+                <a href="home.html">
+                <img id="btn_img" src="../img/btn_gerais/menu_principal.png" alt="pg_principal" title="Página Principal"></a>
+                <span><h3>Home</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="lojas.html">
+                <img id="btn_img" src="../img/btn_gerais/menu_loja.png" alt="pg_cadLojas" title="Cadastro Lojas"></a>
+                <span><h3>Lojas</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="vendedores.html">
+                <img id="btn_img" src="../img/btn_gerais/menu_vendedores.png" alt="pg_cadVendedores" title="Cadastro Vendedores"></a>
+                <span><h3>Vendedores</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="clientes.html">                
+                <img id="btn_img" src="../img/btn_gerais/menu_cliente.png" alt="pg_cadClientes" title="Cadastro Clientes"></a>
+                <span><h3>Clientes</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="estoque.html">                
+                <img id="btn_img" src="../img/btn_gerais/menu_estoque.png" alt="pg_cadEstoque" title="Cadastro Produtos"></a>
+                <span><h3>Produtos</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="vendas.html">
+                <img id="btn_img" src="../img/btn_gerais/menu_vendas.png" alt="pg_cadVendas" title="Cadastro Vendas"></a>
+                <span><h3>Vendas</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="relatorios.html">
+                <img id="btn_img" src="../img/btn_gerais/menu_relatorio.png" alt="pg_relatorios" title="Relatorios"></a>
+                <span><h3>Relatórios</h3></span>
+            </div>    
+        </nav>
+        <div id="conteudoPrincipal">
+                <div id="abas">
+                    <nav class="nav_tabs">
+                        <ul>
+                            <li>
+                                <input type="radio" name="tabs" class="rd_tabs" id="editLoja">
+                                <label class="label_abas aba_venda" for="editLoja" id="modoEdicao">INCLUIR VENDA</label>
+                                <div class="conteudo">
+                                    <div id="conteudoVendas" >
+                                        <div id="ladoEsquerdo">
+                                            <div id="vendaInfo">
+                                                <article id="vendaInfoDados">
+                                                    <div>
+                                                        <section class="vendaInfoLabel">
+                                                            <label>LOJA</label>
+                                                        </section>
+                                                        <section class="vendaInfoInput">
+                                                        <input type="search" value="LOJA 001" id="localizaLoja" placeholder="Informe Loja ..." list="pesquisaLoja">
+                                                            <datalist id="pesquisaLoja">
+                                                            </datalist>
+                                                        </section>
+                                                    </div>
+                                                    <div>
+                                                        <section class="vendaInfoLabel">
+                                                            <label>VENDEDOR</label>
+                                                        </section>
+                                                        <section class="vendaInfoInput">
+                                                            <input type="search" id="localizaVendedor" placeholder="Informe Vendedor ..." list="pesquisaVendedor">
+                                                            <datalist id="pesquisaVendedor">
+                                                            </datalist>
+                                                        </section>
+                                                    </div>
+                                                    <div>
+                                                        <section class="vendaInfoLabel">
+                                                            <label>CLIENTE</label>
+                                                        </section>
+                                                        <section class="vendaInfoInput">
+                                                            <input type="search" id="localizaCliente" placeholder="Informe Cliente ..." list="pesquisaCliente">
+                                                            <datalist id="pesquisaCliente">
+                                                            </datalist>
+                                                        </section>
+                                                    </div>
+                                                    <div>
+                                                        <section class="vendaInfoLabel">
+                                                            <label>PRODUTO</label>
+                                                        </section>
+                                                        <section class="vendaInfoInput">
+                                                            <input type="search" id="localizaProduto" placeholder="Informe Produto ..." list="pesquisaProduto">
+                                                            <datalist id="pesquisaProduto">
+                                                            </datalist>
+                                                        </section>
+                                                    </div>
+                                                    <div>
+                                                        <section class="vendaInfoLabel">
+                                                            <label>QUANTIDADE</label>
+                                                        </section>
+                                                        <section class="vendaInfoInput">
+                                                            <input type="text" id="produtoQuantidade" placeholder="Informe Quantidade ..." onblur="recuperaDadosInformados()">
+                                                        </section>
+                                                    </div>
+                                                </article>
+                                            </div>
+                                            <div id="vendaBotoes">
+                                                <div class="btnVendasControle">
+                                                    <input type="button" alt="Finaliza_Venda" title="Finalizar Venda" class="btnVendas btnVendaFinaliza" onclick="fnFinalizaVenda()">
+                                                </div>
+                                                <div class="btnVendasControle">
+                                                    <input type="button"  alt="Cancelar_Venda" title="Cancelar Venda" class="btnVendas btnVendaCancela" onclick="fnCancelaVenda()">
+                                                </div>
+                                                <div class="btnVendasControle">
+                                                    <input type="button" alt="Excluir_Item" title="Excluir Item" class="btnVendas btnVendaExluiItem" onclick="fnExcluiItemVenda()">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="ladoDireito">
+                                            <div id="vendaCupons">
+                                                <h4>Cupom de Vendas</h4>
+                                                <fieldset id="cupomVenda">
+                                                    <table id="tabelaItensCupom" cellspacing=0 cellpadding=0>
+                                                        <thead>
+                                                            <td style="width: 10%;">Item</td>
+                                                            <td style="width: 45%;">Descrição</td>
+                                                            <td style="width: 15%;">Qtde.</td>
+                                                            <td style="width: 15%;">Unit.</td>
+                                                            <td style="width: 15%;">Total</td>
+                                                        </thead>
+                                                    </table>
+                                                </fieldset>
+                                            </div>
+                                            <div id="vendaTotal">
+                                                <section id="valorTotal"><p>TOTAL R$</p></section>
+                                                <section id="valorTotal">
+                                                    <fieldset id="somaTotal">0,00
+                                                    </fieldset>
+                                                </section>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>               
+                        </ul>
+                    </nav>
+                </div>            
+        </div>
+    </div>
+    <footer id="footer"><p>DESENVOLVIDO POR EQUIPE YIELD E SENAI FLORIANÓPOLIS - SC - 2019/01</p></footer>
+</body>
+</html>

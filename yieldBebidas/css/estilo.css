@@ -1,0 +1,769 @@
+*{
+    margin: 0; 
+    padding: 0;
+}
+html{
+    height: 100%;
+}
+
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: lightgray;
+    height: 100%;
+}
+
+#principal{
+    height: 85%;
+}
+
+#header{
+    background-color: rgb(0, 102, 153); 
+    height: 5em;
+    text-align: center;
+}
+
+.headbotoes{
+    width: 5%;
+    height: 100%;
+    float: left;
+    box-sizing: border-box;
+}
+
+.headlogo{
+    width: 80%;
+    height: 100%;
+    float: left;
+    box-sizing: border-box;
+}
+
+#logosistema{
+    margin-top: .75em;
+    height: 60%;
+}
+
+#btn_ajuda, #btn_sair{
+    margin-top: 1.3em;
+    height: 40%;
+}
+
+#mnEsquerda{
+    width: 75px;
+    height: 100%;
+    float: left;
+}
+
+#menuEsquerda{
+    background-color: #222; 
+    color: white;
+    width: 75px; 
+    height: 100%; 
+    float: left;
+}
+
+.btn_menu{
+    margin-top: 10%;
+    margin-left: 10%;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.btn_menu span{
+    margin-left: -260px;
+    width: 125px;
+    height: 50px;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: #222;
+    float: left;
+    position: absolute;
+}
+
+.btn_menu a{
+    width: 25px;
+}
+
+
+.btn_menu span h3{
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.btn_menu:hover span{
+    background-color: #222;
+    margin-left: 40px;
+    border-radius: 20px;
+    position: absolute;
+}
+
+#btn_img{
+    height: 100%;
+}
+
+#conteudoPrincipal{
+    background-color: lightgray; 
+    float: left; 
+    margin-left: 8%;
+    width: 80%; 
+    height: 70%;
+    text-align: center;
+}
+
+/* INICIO TELA HOME */
+#titulo1{
+    margin-top: 17vh;
+    height: 10vh;
+    box-sizing: border-box;
+    font-size: 115%;
+}
+
+#quemSomos{
+    background-color: white;
+    height: 100%;
+    margin-top: 1%; 
+    box-sizing: border-box;
+    padding: 2%;
+    border: #222 solid .25em;
+    border-radius: 2em;
+}
+
+#quemSomos legend{
+    font-size: 125%;
+    font-weight: bolder;
+    font-style: oblique;
+    background-color: lightgray;
+    letter-spacing: 1vw;
+    padding: 1.25%;
+    box-sizing: border-box;
+}
+
+#quemSomos p{
+    font-size: 125%;
+    line-height: 150%;
+}
+/* FIM TELA HOME*/
+
+/* INICIO TELA CADASTROS*/
+#abas .nav_tabs {
+    width: 80%;
+    height: 80%;
+    margin-top: 1.5%;
+    position: absolute;
+    background-color: lightgray;
+    box-sizing: border-box;
+}
+
+#abas .nav_tabs ul{
+    list-style: none;
+    box-sizing: border-box;
+}
+
+#abas .nav_tabs ul li{
+    float: left;
+    width: 25%;
+    box-sizing: border-box;
+}
+
+#abas .label_abas {
+    width: 100%;
+    padding: 5%;
+    background-color: #797070;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 25px;
+    display: block;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    top: 0;
+    box-sizing: border-box;
+}
+
+#abas .aba_venda{
+    background-color: green;
+    border-bottom-left-radius: 5em;
+    border-bottom-right-radius: 5em;
+    border-top-left-radius: 5em;
+    border-top-right-radius: 5em;
+}
+
+#abas .rd_tabs:checked ~ label{
+    background-color: #006699;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    
+}
+
+#abas .rd_tabs{
+    display: none;
+}
+
+#abas .conteudo{
+    
+    border: .3em solid #006699;
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+    border-top-right-radius: 2em;
+    background-color:  #fff;
+    display: none;
+    position: absolute;
+    height: 70vh;
+    width: 80vw;
+    box-sizing: border-box;
+    left: 0;
+}
+
+#abas .rd_tabs:checked ~ .conteudo{
+    display: block;
+}
+
+#abas .rd_tabs:checked ~ .conteudo{
+    display: block;
+}
+
+#abas .conteudo article{
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+#abas a img{
+    width: 1.5em;
+    height: 1.5em;
+}
+
+#tabCabecalho section{
+    display: inline-flex;
+    font-size: .8em;
+    border: 1px solid black;
+}
+
+#tabela{
+    /* overflow: scroll; */
+    height: 60vh;
+}
+
+#tabCadastro {
+    width: 100%;
+}
+
+#tabCadastro th{
+    text-align: center;
+    font-size: .8em;
+}
+
+#tabCadVendedor td{
+    text-align: center;
+    font-size: .8em;
+}
+
+#tabCadastro tr:nth-child(even) {
+    background: #d1baba;
+}
+
+#tabCadastro tr:nth-child(odd) {
+    background: white;
+}
+
+.btnVendas {
+    height: 4em;
+    width: 4em;
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+.btnVendaExluiItem {
+    background-image: url(../img//btn_gerais/btn_excluir.png);
+}
+
+.btnVendaFinaliza{
+    background-image: url(../img//btn_gerais/btn_confirmar.png);
+}
+
+.btnVendaCancela{
+    background-image: url(../img//btn_gerais/btn_cancelar.png);
+}
+
+/* INICIO CAMPOS FORMULÁRIOS*/
+#frmLojas{
+    margin: 2vh;
+}
+
+#frmSecoes{
+    margin-left: 1em;
+    width: 95%;
+    font-size: 95%;
+    border-top: 2px solid #222;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    box-sizing: border-box;
+}
+
+#frmSecoes legend{
+    text-align: left;
+    margin-left: 5%;
+    box-sizing: border-box;
+}
+
+#frmSecoes p{
+    font-size: 125%;
+    font-weight: bolder;
+}
+
+#cadCampos{
+    width: 90%;
+    box-sizing: border-box;
+    display: inline-block;
+    border: 2px solid #757474;
+    box-sizing: border-box;
+    
+}
+
+#frmSecoes label{
+    display: inline-block;
+    width: 8vh;
+    /* border: 1px solid brown; */
+}
+
+#frmSecoes .cxText{
+    border-radius: 1em;
+    height: 4vh;
+    border: 2px solid #757474;
+    box-sizing: border-box;
+    outline: none;   
+    padding-left: 5px;
+    font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+}
+
+#frmSecoes .cxText:focus{
+    border: 2px solid #bddff0;
+}
+
+#btnIdCodigos, #btnIdCodigosBarras, #btnGeraSenha {
+    width: 4vw;
+    height: 3vh;
+    border: none;
+    color: white;
+    background-color: #006699;
+    font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 75%;
+    border-radius: 2em;
+    outline: none;
+    box-sizing: border-box; 
+}
+
+#box1{
+    text-align: left;
+    /* border: 1px solid red; */
+    box-sizing: border-box;
+}
+
+#box2{
+    width: 50%;
+    text-align: left;
+    /* border: 1px solid red; */
+    float: left;
+    box-sizing: border-box;
+}
+
+#box3{
+    width: 40%;
+    text-align: left;
+    /* border: 1px solid red; */
+    float: left;
+    box-sizing: border-box;
+}
+
+#box4{
+    width: 20%;
+    text-align: left;
+    /* border: 1px solid red; */
+    float: left;
+    box-sizing: border-box;  
+}
+
+#box5{
+    width: 33%;
+    text-align: left;
+    /* border: 1px solid red; */
+    float: left;
+    box-sizing: border-box;  
+}
+
+#frmSecoes .botao{
+    width: 15vw;
+    height: 5vh;
+    margin-top: 1%;
+    border: none;
+    color: white;
+    font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 100%;
+    border-radius: 2em;
+    outline: none;
+}
+
+#btnAdicionar {
+    background: #047404;
+    display: inline-block;
+}
+
+#btnEditar {
+    background: rgb(22, 22, 100);
+    display: none;   
+}
+
+#btnCancelar{
+    background: #900505;
+}
+
+/* INICIO CAMPOS FORMULÁRIOS*/
+/* FIM TELA CADASTROS*/
+
+/* INICIO TELA VENDAS */
+/* OBS: PARA CAMPOS DE INFORMAÇÕES, LAYOUT PRINCIPAL SEGUE LAYOU DAS TELAS DE CADASTROS */
+#conteudoVendas{
+    margin: 2vh auto;
+    width: 75vw;
+    height: 65vh;
+    /* background-color: gray;
+    border: 1px solid black; */
+    border-radius: 5vh;
+    padding: 2vh;
+    box-sizing: border-box;
+    display: flex;
+}
+
+/* VENDAS COLUNA DA ESQUERDA*/
+#ladoEsquerdo{
+    width: 50%;
+    height: 100%;
+    /* background-color: darkblue; */
+    /* border: 1px black solid; */
+    box-sizing: border-box;
+    float: left;
+}
+
+#ladoDireito{
+    width: 50%;
+    height: 100%;
+    /* background-color: darkgreen; */
+    /* border: 1px black solid; */
+    box-sizing: border-box;
+    float: left;
+}
+
+#vendaInfo {
+    width: 100%;
+    height: 60%;
+    /* border: 1px solid darkgreen; */
+    /* background-color: white; */
+    box-sizing: border-box;
+}
+
+#vendaBotoes {
+    width: 80%;
+    height: 40%;
+    /* border: 1px solid darkred; */
+    /* background-color: lightcoral; */
+    box-sizing: border-box;
+}
+
+.btnVendasControle{
+    float: left;
+    width: 33.33%;
+    margin-top: 5em;
+}
+
+#vendaCupons {
+    width: 100%;
+    height: 80%;
+    /* border: 1px solid darkblue; */
+    /* background-color: lightblue; */
+    box-sizing: border-box;
+    /* display: flex; */
+}
+
+#vendaTotal {
+    width: 100%;
+    height: 20%;
+    /* padding: 1em; */
+    /* border: 1px solid darkred;
+    background-color: lightcoral; */
+    box-sizing: border-box;
+    display: flex;
+}
+
+#vendaInfoDados div {
+    text-align:  left;
+    height: 6.75vh;
+    box-sizing: border-box;    
+}
+
+#vendaInfoDados .vendaInfoLabel{
+    width: 25%;
+    height: 100%;
+    padding-top: .75em;
+    float: left;
+    box-sizing: border-box;
+}
+
+#vendaInfoDados .vendaInfoInput{
+    width: 74%;
+    height: 100%;
+    float: left;
+    box-sizing: border-box;
+}
+
+#vendaInfoDados .vendaInfoInput input{
+    width: 100%;
+    height: 100%;    
+    font-size: 1em;
+    border: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+}
+
+#cupomVenda{
+    width: 100%;
+    height: 90%;
+    box-sizing: border-box;
+    border-radius: 2vh;
+    padding: .25em;
+    background-color: lightgray;
+    box-sizing: border-box;
+}
+
+#cupomVenda table {
+    width: 100%;
+}
+
+#cupomVenda table td{
+    font-size: .75em;
+}
+
+#valorTotal {
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+}
+
+#valorTotal p {
+    font-size: 1.5em;
+    margin-top: 1.1em;
+    margin-left: 5em;
+    text-align: left;
+}
+
+#somaTotal{
+    width: 100%;
+    height: 100%;
+    background-color: lightgray;
+    text-align: right;
+    font-size: 1.5em;
+    padding-right: 1em; 
+    padding-top: 1em; 
+    box-sizing: border-box;
+    border-radius: 2vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#relFiltros {
+    width: 100%;
+    height: 7em;
+    /* border: 5px red solid; */
+    box-sizing: border-box;
+    background-color: transparent;
+    display: inline-block;
+    margin-top: .1em;
+}
+
+.dadosRelatorio{
+    /* border: 1px blue solid; */
+    width: 25%;
+    height: 50%;
+    float: left;
+    box-sizing: border-box;
+}
+
+.botaoConsulta {
+    text-align: left;
+    outline: none;
+    border: 0;
+}
+
+
+
+.camposRelatorio{
+    /* border: 1px violet solid; */
+    color: black;
+    font-weight: bolder;
+    width: 100%;
+    padding: .5em;
+    text-align: left;
+    height: 50%;
+    float: left;
+    box-sizing: border-box;
+}
+
+.camposRelatorioFiltro{
+    /* border: 1px orangered solid; */
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    padding: .5em;
+    /* float: left; */
+    box-sizing: border-box;
+}
+
+.filtrosRelatorio{
+    background-color: transparent;
+    border: 1px solid blue;
+}
+
+::placeholder{
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2em;
+}
+
+.camposRelatorioFiltro input{
+    width: 95%;
+    border: none;
+}
+
+#consultaRelatorio{
+    margin-top: 1em;
+    width: 50%;
+    height: 50%;
+    border: none;
+    background: green;
+    color: white;
+    font-size: .9em;
+    font-weight: bolder;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+    border-radius: 5em;
+    
+}
+.hr {
+    border: 1px solid #006699;
+    border-style: double;
+}
+
+#relVendas {
+    margin-top: 2em;
+    width: 100%;
+    height: 95%;
+    box-sizing: border-box;
+    display: block;
+}
+
+#relHeader{
+    height: 7%;
+    margin-top: .5em;
+}
+
+#relBody{
+    height: 83%;
+    border: #222 1px solid;
+
+}
+#relFooter{
+    height: 10%;
+}
+
+#cadastro {
+    margin-top: 1em;
+    width: 100%;
+    height: 20em;
+    box-sizing: border-box;
+    display: block;
+    /* border: 1px solid red; */
+}
+
+.tabelaBody{
+    height: 100%;
+    /* border: 2px solid blueviolet; */
+    box-sizing: border-box;
+    font-size: .85em;
+    overflow-y: scroll;
+}
+
+.grid{
+    display: grid;
+}
+
+.grid-header-cadastro {
+    grid-template-columns: 10% 20% 20% 19% 4% 22% 5%;
+    font-weight: bolder;
+}
+
+.grid-header{
+    grid-template-columns: 7% 8% 17% 17% 18% 10% 10% 11%;
+    color: #fff;
+    background-color: #222;
+    height: 100%;
+    font-size: 1.1em;
+    padding-top: .2sem;
+    box-sizing: border-box;
+    
+}
+
+.grid-footer{
+    grid-template-columns: 80% 20%;
+    color: #fff;
+    background-color: #222;
+    font-size: 1.2em;
+    height: 100%;
+    padding-top: .3em;
+    box-sizing: border-box;
+}
+
+.grid-footer-cadastro{
+    grid-template-columns: 100%;
+    height: 1em;
+}
+
+.item-footer{
+    text-align: right;
+}
+
+
+#tbVendas {
+    width: 100%;
+    /* border: 3px solid #047404; */
+    box-sizing: border-box;
+    border-spacing: 0;
+}
+
+#tbVendas tr:nth-child(even) {
+    background: #d1baba;
+}
+
+#tbVendas tr:nth-child(odd) {
+    background: white;
+}
+
+/* INCIO RODAPÉ */
+#footer{
+    width: 100%;
+    height: 1.75em;
+    background-color: #006699;
+    color: white;
+    bottom: 0;
+    position: fixed;
+    text-align: center;
+    
+}
+
+#footer p {
+    padding-top: 1em;
+    font-size: .7em;
+    letter-spacing: .5em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

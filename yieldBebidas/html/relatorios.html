@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>YB - Relatórios</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+    <script type="text/javaScript" src="../js/telaRelatorioVendas.js"></script>
+    <script type="text/javaScript" src="../js/telaVendasCarregaDados.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+    <script type="text/javaScript" src="../js/jquery.mask.min.js"></script>
+    <script type="text/javaScript">
+        $(document).ready(function(){
+            $("#dtInicial").mask("00/00/0000");
+            $("#dtFinal").mask("00/00/0000");
+            $("#valorTotal").mask("999.999.999,99");
+            
+        })
+    </script>
+</head>
+<body onload="fnCarregaDadosLocalStorage()">
+    <header id="header">
+        <div class="headbotoes"></div>
+        <div class="headbotoes"></div>
+        <div class="headlogo"><img src="../img/logoSistema.png" id="logosistema" alt="logoSistema"> </div>
+        <div class="headbotoes"><img id="btn_ajuda" src="../img/btn_gerais/head_ajuda.png" alt="iconeAjuda" title="Ajuda"></div>
+        <div class="headbotoes"><a href="../index.html"><img id="btn_sair" src="../img/btn_gerais/head_sair.png" alt="iconeSair" title="Sair"></a></div>
+    </header>
+    <div id="principal">
+        <nav id="menuEsquerda">
+            <div class="btn_menu">
+                <a href="home.html">
+                <img id="btn_img" src="../img/btn_gerais/menu_principal.png" alt="pg_principal" title="Página Principal"></a>
+                <span><h3>Home</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="lojas.html">
+                <img id="btn_img" src="../img/btn_gerais/menu_loja.png" alt="pg_cadLojas" title="Cadastro Lojas"></a>
+                <span><h3>Lojas</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="vendedores.html">
+                <img id="btn_img" src="../img/btn_gerais/menu_vendedores.png" alt="pg_cadVendedores" title="Cadastro Vendedores"></a>
+                <span><h3>Vendedores</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="clientes.html">                
+                <img id="btn_img" src="../img/btn_gerais/menu_cliente.png" alt="pg_cadClientes" title="Cadastro Clientes"></a>
+                <span><h3>Clientes</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="estoque.html">                
+                <img id="btn_img" src="../img/btn_gerais/menu_estoque.png" alt="pg_cadEstoque" title="Cadastro Produtos"></a>
+                <span><h3>Produtos</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="vendas.html">
+                <img id="btn_img" src="../img/btn_gerais/menu_vendas.png" alt="pg_cadVendas" title="Cadastro Vendas"></a>
+                <span><h3>Vendas</h3></span>
+            </div>
+            <div class="btn_menu">
+                <a href="relatorios.html">
+                <img id="btn_img" src="../img/btn_gerais/menu_relatorio.png" alt="pg_relatorios" title="Relatorios"></a>
+                <span><h3>Relatórios</h3></span>
+            </div>    
+        </nav>
+
+        <div id="conteudoPrincipal">
+            <div id="relFiltros">
+                <h3 style="text-align: left">Filtros da Consulta</h3><hr class="hr">
+                <div class="dadosRelatorio">
+                    <section class="camposRelatorio">
+                            <label>LOJA</label>
+                    </section>
+                    <section class="camposRelatorioFiltro">
+                        <input type="search" id="localizaLoja" placeholder="Selecionar Loja ..." list="pesquisaLoja" class="filtrosRelatorio">
+                        <datalist id="pesquisaLoja">
+                        </datalist>
+                    </section>
+                </div>
+                <div class="dadosRelatorio">
+                    <section class="camposRelatorio">
+                        <label>CLIENTE</label>
+                    </section>
+                    <section class="camposRelatorioFiltro">
+                        <input type="search" id="localizaCliente" placeholder="Selecionar Cliente ..." list="pesquisaCliente" class="filtrosRelatorio">
+                        <datalist id="pesquisaCliente">
+                        </datalist>
+                    </section>
+                </div>
+                <div class="dadosRelatorio">
+                    <section class="camposRelatorio">
+                        <label>PRODUTO</label>
+                    </section>
+                    <section class="camposRelatorioFiltro">
+                        <input type="search" id="localizaProduto" placeholder="Selecionar Produto ..." list="pesquisaProduto" class="filtrosRelatorio">
+                        <datalist id="pesquisaProduto">
+                        </datalist>
+                    </section>
+                </div>
+                <div class="dadosRelatorio">
+                    <!-- <section class="camposRelatorio">
+                            <label>FILTRO RESULTADO</label>
+                    </section>
+                    <section class="camposRelatorioFiltro">
+                        <input type="text" id="txtBuscar" placeholder="Buscar ... " class="campoBuscar">
+                    </section> -->
+                </div>
+                <div class="dadosRelatorio">
+                        <section class="camposRelatorio">
+                            <label>VENDEDOR</label>
+                        </section>
+                        <section class="camposRelatorioFiltro">
+                            <input type="search" id="localizaVendedor" placeholder="Selecionar Vendedor ..." list="pesquisaVendedor" class="filtrosRelatorio">
+                            <datalist id="pesquisaVendedor">
+                            </datalist>
+                        </section>
+                    </div>
+                <div class="dadosRelatorio">
+                    <section class="camposRelatorio">
+                        <label>DATA INICIAL</label>
+                    </section>
+                    <section class="camposRelatorioFiltro">
+                        <input type="text" id="dtInicial" placeholder="00/00/0000" class="campoData filtrosRelatorio"></div>
+                    </section>
+                <div class="dadosRelatorio">
+                    <section class="camposRelatorio">
+                        <label>DATA FINAL</label>
+                    </section>
+                    <section class="camposRelatorioFiltro">
+                        <input type="text" id="dtFinal" placeholder="00/00/0000" class="campoData filtrosRelatorio"></div>
+                    </section>
+                <div class="dadosRelatorio botaoConsulta">
+                    <input type="button" id="consultaRelatorio" value="CONSULTAR" onclick="fnRelatoriosVendas()">
+                </div>
+            </div>
+            <div id="relVendas">
+                <h3 style="text-align: left">Resultado da Consulta</h3><hr class="hr">
+                <div id="relHeader">
+                    <section class="grid grid-header">
+                        <div>Cupom</div>
+                        <div>Data</div>
+                        <div>Vendedor</div>
+                        <div>Cliente</div>
+                        <div>Produto</div>
+                        <div>Qtde</div>
+                        <div>Vlr Unitario</div>
+                        <div>Vlr Total</div>
+                    </section>
+                </div>
+                <div id="relBody" style="visibility: hidden;">
+                    <section class="tabelaBody">
+                        <table id="tbVendas" >
+                            <tbody id="tbody"></tbody>
+                        </table>
+                    </section>
+                </div>
+                <div id="relFooter" style="visibility: hidden;">
+                    <section class="grid grid-footer">
+                        <div class="item-footer">Valor Total R$:</div>
+                        <div class="item-footer" id="valorTotal"></div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="clear"></div>
+    <footer id="footer"><p>DESENVOLVIDO POR EQUIPE YIELD E SENAI FLORIANÓPOLIS - SC - 2019/01</p></footer>
+</body>
+</html>
